@@ -18,5 +18,18 @@ public class Pattern1 {
             }
             System.out.println();
         }
+        System.out.println("============");
+       /* * * * *
+        * * *
+        * *
+        **/
+        for (int i = 0; i < n; i++) {
+            for (int j = n; j>i; j--) {
+                // if(i>=j)
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+
     }
 }

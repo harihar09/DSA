@@ -1,4 +1,4 @@
-package Patterns;
+ package Patterns;
 
        /*       *
               *   *
@@ -8,7 +8,6 @@ package Patterns;
       *   *   *   *   *   *   */
 
 import java.util.Scanner;
-
 public class Pattern6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -32,7 +31,6 @@ public class Pattern6 {
             p=0;
             count=0;
             System.out.println();
-
         }
     }
 }

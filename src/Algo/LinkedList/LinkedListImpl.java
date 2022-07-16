@@ -76,6 +76,22 @@ public class LinkedListImpl {
         }
         secondLastNode.next =null;
     }
+    public void reverseList(){
+        if(head == null || head.next == null){
+            return;
+        }
+        Node preNode = head;
+        Node currNode = head.next;
+        while(currNode!=null){
+            Node nextNode = currNode.next;
+            currNode.next = preNode;
+            //update
+            preNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = preNode;
+    }
     public boolean isEmpty(){
       return  (head==null)?true:false;
     }
@@ -88,8 +104,9 @@ public class LinkedListImpl {
         linkedList.addFirst(5);
         linkedList.print();
       //  linkedList.deleteFirst();
-        linkedList.addLast(40);
-        linkedList.deleteFirst();
+       // linkedList.addLast(40);
+        //linkedList.deleteFirst();
+        linkedList.reverseList();
         linkedList.print();
     }
 }

@@ -9,9 +9,9 @@ public class EmployeeDAO {
         List<Employee> employeeList = new ArrayList<>();
         employeeList.add(new Employee(1,"tom","IT",10000));
         employeeList.add(new Employee(2,"john","CS",20000));
-        employeeList.add(new Employee(3,"Jos","CIVIL",100000));
+        employeeList.add(new Employee(3,"Jos","IT",100000));
         employeeList.add(new Employee(4,"Mark","Govt",50000));
-        employeeList.add(new Employee(5,"Clark","IT",300000));
+        employeeList.add(new Employee(5,"Jos","IT",300000));
 
         return  employeeList;
     }

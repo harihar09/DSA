@@ -1,7 +1,7 @@
 package Java8.EmployeeApp;
 
 
-public class Employee {
+public class Employee implements Comparable{
     private int id;
     private String name;
     private String department;
@@ -54,5 +54,18 @@ public class Employee {
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int count =0;
+        Employee e = (Employee) o;
+        count =  e.getDepartment().compareTo(this.getDepartment());
+        if (count ==0){
+           count= this.getName().compareTo(e.getName());
+        }
+        if(count == 0)
+            count = Long.toString(this.getSalary()).compareTo(Long.toString(e.getSalary()));
+        return  count;
     }
 }

@@ -1,4 +1,4 @@
-package Java8;
+package Java8.FunctionalInterface;
 
 public class FunctionalDemoImplUsing8 {
     public static void main(String[] args) {

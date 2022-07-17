@@ -1,4 +1,4 @@
-package Java8;
+package Java8.FunctionalInterface;
 
 public class FunctionalDemoImpl implements FunctionalDemo {
 

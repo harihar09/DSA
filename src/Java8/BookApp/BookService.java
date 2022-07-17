@@ -1,7 +1,6 @@
-package Java8;
+package Java8.BookApp;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class BookService {

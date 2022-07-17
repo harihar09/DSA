@@ -1,10 +1,8 @@
-package Java8;
+package Java8.Predicate;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class PredicateImpl /*implements Predicate<Integer>*/ {
     public static void main(String[] args) {

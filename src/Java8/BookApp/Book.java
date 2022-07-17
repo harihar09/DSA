@@ -1,4 +1,4 @@
-package Java8;
+package Java8.BookApp;
 
 public class Book {
     private int id;

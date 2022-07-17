@@ -23,7 +23,8 @@ public class PredicateImpl /*implements Predicate<Integer>*/ {
         Predicate<Integer> predicate = integer -> integer%2==0;
        // System.out.println(predicate.test(10));
         List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8);
-        list.stream().filter(predicate).forEach(integer -> System.out.println(integer));
+       // list.stream().filter(predicate).forEach(integer -> System.out.println(integer)); // predicate reference
+        list.stream().filter(integer -> integer%2==0).forEach(integer -> System.out.println(integer)); //lambda expression
     }
 
    /* @Override

@@ -1,5 +1,6 @@
 package Java8.Map;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,6 +16,7 @@ public class MapIterator {
         System.out.println(map);
         Iterator<Integer> integeriterator = map.keySet().iterator();
         Iterator<String> stringIterator = map.values().iterator();
+        Collection<String> values = map.values();
         System.out.println("size "+map.size());
        Iterator<Map.Entry<Integer,String>> iterator =  map.entrySet().iterator();
      /*   while(iterator.hasNext()){

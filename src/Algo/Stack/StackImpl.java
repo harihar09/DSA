@@ -20,7 +20,7 @@ public class StackImpl {
     }
     public void pop(){
         if(!isUnderflow())
-        --top;
+            System.out.println(stack[top--]+" is removed from stack");
         else
             System.out.println("Stack is empty");
     }
@@ -31,7 +31,7 @@ public class StackImpl {
             System.out.println("Stack is empty");
         return -1;
     }
-    public int min(){
+    public void min(){
         if(!isUnderflow()) {
             int min = stack[top];
             for (int i = top - 1; i >= 0; i--) {
@@ -39,13 +39,12 @@ public class StackImpl {
                     min = stack[i];
                 }
             }
-            return min;
+            System.out.println("min "+min);
         }
         else
             System.out.println("Stack is empty");
-        return  -1;
     }
-    public int max(){
+    public void max(){
         if(!isUnderflow()) {
             int max = stack[top];
             for (int i = top - 1; i >= 0; i--) {
@@ -53,15 +52,16 @@ public class StackImpl {
                     max = stack[i];
                 }
             }
-            return max;
+            System.out.println("Max "+max);
         }
-        return -1;
+        System.out.println("Stack is empty");
     }
     public void print(){
         if(!isUnderflow()) {
             for (int i = 0; i <= top; i++) {
-                System.out.print(stack[i] + " ");
+                System.out.print(stack[i] + "-> ");
             }
+            System.out.println();
         }else
             System.out.println("Stack is empty");
     }
@@ -76,18 +76,39 @@ public class StackImpl {
         System.out.println("Enter stack size");
         int size = sc.nextInt();
         StackImpl stack = new StackImpl(size);
-        stack.print();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.print();
-        stack.pop();
-        System.out.println();
-        stack.print();
-        System.out.println();
-        System.out.println(stack.peek());
-        System.out.println(stack.max());
-        System.out.println(stack.min());
+
+        int option;
+        do{
+            System.out.println("1. Push()");
+            System.out.println("2. Pop()");
+            System.out.println("3. Peek()");
+            System.out.println("4. Print()");
+            System.out.println("5. Min()");
+            System.out.println("6. Max()");
+            System.out.println("7. Exit");
+            System.out.println("Enter above any one option");
+             option = sc.nextInt();
+            switch(option){
+
+                case 1 : System.out.println("Enter number");
+                          int item = sc.nextInt();
+                          stack.push(item);
+                          break;
+                case 2 : stack.pop();
+                         break;
+                case 3 : stack.peek();
+                         break;
+                case 4 : stack.print();
+                         break;
+                case 5: stack.min();
+                        break;
+                case 6 :stack.max();
+                         break;
+                case 7 : System.exit(0);
+                default :
+                    System.out.println("enter correct option 1- 7 ");
+            }
+        }while(option!=6);
 
     }
 }

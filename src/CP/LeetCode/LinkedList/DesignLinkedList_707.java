@@ -1,4 +1,4 @@
-package CP.LeetCode;
+package CP.LeetCode.LinkedList;
 
 public class DesignLinkedList_707 {
     Node head;

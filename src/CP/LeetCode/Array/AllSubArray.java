@@ -1,4 +1,4 @@
-package CP;
+package CP.LeetCode.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package CP.LeetCode;
+package CP.LeetCode.HashMap;
 
 import java.util.*;
 import java.util.stream.Collectors;

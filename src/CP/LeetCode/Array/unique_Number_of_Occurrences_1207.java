@@ -1,4 +1,4 @@
-package CP.LeetCode;
+package CP.LeetCode.Array;
 
 import com.sun.deploy.util.ArrayUtil;
 

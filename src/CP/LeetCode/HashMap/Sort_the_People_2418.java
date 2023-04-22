@@ -1,8 +1,8 @@
 package CP.LeetCode.HashMap;
 
+import java.nio.Buffer;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Sort_the_People_2418 {
     public static void main(String[] args) {
@@ -25,5 +25,6 @@ public class Sort_the_People_2418 {
         Collections.sort(list);
         System.out.println(list);
         list.toArray();
+
     }
 }

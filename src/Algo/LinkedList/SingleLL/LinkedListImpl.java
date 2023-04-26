@@ -1,6 +1,4 @@
-package Algo.LinkedList;
-
-import sun.awt.image.ImageWatched;
+package Algo.LinkedList.SingleLL;
 
 public class LinkedListImpl {
     Node head;

@@ -1,12 +1,12 @@
-package Algo.LinkedList;
+package Algo.LinkedList.DoublyLL;
 
 public class DoublyLLApp {
     DoublyLLNode head;
     int linkedListLength = 0;
 
-    private void insertAtHead(int data){
+    public void insertAtHead(int data){
         //create new node
-        DoublyLLNode  newNode = new DoublyLLNode(data);
+        DoublyLLNode newNode = new DoublyLLNode(data);
         linkedListLength++;
         //check if LL is empty,if yes make new node as LL head and return
         if(head == null){
@@ -19,7 +19,7 @@ public class DoublyLLApp {
         head.pre = newNode;
         head = newNode;
     }
-    private void insertAtTail(int data){
+    public void insertAtTail(int data){
         //create a new node
         DoublyLLNode newNode = new DoublyLLNode(data);
         linkedListLength++;
@@ -38,7 +38,7 @@ public class DoublyLLApp {
         newNode.pre = tempNode;
         tempNode.next = newNode;
     }
-    private void insertAtIndex(int index, int data){
+    public void insertAtIndex(int index, int data){
         //if the index is 0 then insertAtHead
         if(index == 0){
             insertAtHead(data);
@@ -64,7 +64,7 @@ public class DoublyLLApp {
         lastNode.next = newNode;
         newNode.pre = lastNode;
     }
-    private void deleteFirstNode(){
+    public void deleteFirstNode(){
         if(head == null){
             System.out.println("Linked list empty");
             return;
@@ -72,7 +72,7 @@ public class DoublyLLApp {
         head = head.next;
         linkedListLength--;
     }
-    private void deleteLastNode(){
+    public void deleteLastNode(){
         if(head == null){
             System.out.println("linked list is empty");
             return;
@@ -85,7 +85,7 @@ public class DoublyLLApp {
         lastNode.pre = null;
         linkedListLength--;
     }
-    private void deleteAtIndex(int index){
+    public void deleteAtIndex(int index){
         if(index < 0 || index > linkedListLength-1){
             int size = linkedListLength-1;
             System.out.println("enter index between "+"0 "+size);
@@ -111,7 +111,7 @@ public class DoublyLLApp {
         tempNode.next = tempNode.next.next;
         linkedListLength--;
     }
-    private void print(){
+    public void print(){
         DoublyLLNode tempNode = head;
         while(tempNode != null){
             System.out.print(tempNode.data+"->");
@@ -119,38 +119,5 @@ public class DoublyLLApp {
         }
         System.out.println("NULL");
         System.out.println("length "+linkedListLength);
-    }
-    public static void main(String[] args) {
-        DoublyLLApp doublyLL = new DoublyLLApp();
-        doublyLL.insertAtHead(50);
-        doublyLL.insertAtHead(40);
-        doublyLL.insertAtHead(30);
-        doublyLL.print();
-        doublyLL.insertAtTail(10);
-        doublyLL.insertAtTail(5);
-        doublyLL.print();
-        doublyLL.insertAtIndex(0,60);
-        doublyLL.print();
-        doublyLL.insertAtIndex(6,70);
-        doublyLL.print();
-        doublyLL.insertAtIndex(3,100);
-        doublyLL.print();
-        doublyLL.insertAtIndex(6,200);
-        doublyLL.print();
-        doublyLL.deleteFirstNode();
-        doublyLL.print();
-        doublyLL.deleteFirstNode();
-        doublyLL.print();
-        doublyLL.deleteLastNode();
-        doublyLL.print();
-        doublyLL.deleteLastNode();
-        doublyLL.print();
-        doublyLL.deleteAtIndex(0);
-        doublyLL.print();
-        doublyLL.deleteAtIndex(3);
-        doublyLL.print();
-        doublyLL.deleteAtIndex(1);
-        doublyLL.print();
-        doublyLL.deleteAtIndex(-1);
     }
 }

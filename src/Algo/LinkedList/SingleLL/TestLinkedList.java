@@ -1,4 +1,4 @@
-package Algo.LinkedList;
+package Algo.LinkedList.SingleLL;
 
 public class TestLinkedList {
     static Node head;

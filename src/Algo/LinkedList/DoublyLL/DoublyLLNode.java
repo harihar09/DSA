@@ -1,4 +1,4 @@
-package Algo.LinkedList;
+package Algo.LinkedList.DoublyLL;
 
 public class DoublyLLNode {
     int data;

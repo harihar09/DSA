@@ -1,4 +1,4 @@
-package Algo.LinkedList;
+package Algo.LinkedList.SingleLL;
 
 public class ReverseListApp {
     public static void main(String[] args) {

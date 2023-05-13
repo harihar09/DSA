@@ -15,15 +15,24 @@ public class SlidingWindow {
         }
         System.out.println("Enter window size");
         int window = sc.nextInt();
+        int sum;
+        int maxSum = 0;
+        int k = 0;
         // total windows = size - window + 1
         System.out.print("{");
         for (int i = 0; i < size - window + 1; i++) {
+            sum = 0;
             System.out.print("{");
             for (int j = i; j < window + i; j++) {
                 System.out.print(arr[j]);
                 if (j < window + i - 1) {
                     System.out.print(",");
                 }
+                sum = sum + arr[j];
+            }
+            if (sum > maxSum) {
+                k = i;
+                maxSum = sum;
             }
             System.out.print("}");
             if (i < size - window) {
@@ -31,6 +40,12 @@ public class SlidingWindow {
             }
         }
         System.out.println("}");
+        System.out.print("{");
+        for (int i = k; i < window+k; i++) {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.print("}"+"\n");
+        System.out.println("Maximum sum is " + maxSum);
 
     }
 }

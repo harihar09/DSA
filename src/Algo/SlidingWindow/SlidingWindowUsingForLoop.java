@@ -2,7 +2,7 @@ package Algo.SlidingWindow;
 
 import java.util.Scanner;
 
-public class SlidingWindow {
+public class SlidingWindowUsingForLoop {
     // {1,2,3,4,5,6} -> {{1,2,3},{2,3,4},{3,4,5},{4,5,6},{5,6,7}}
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -10,14 +10,14 @@ public class StringReverse {
         int start = 0;
         int end = string.length() - 1;
         int mid = 0;
-        char [] ans = stringReverse(string.toCharArray(), start, end, mid);
-        System.out.println(String.copyValueOf(ans));
+        String ans = stringReverse(string.toCharArray(), start, end, mid);
+        System.out.println(ans);
     }
 
-    private static char[] stringReverse(char[] toCharArray, int start, int end, int mid) {
+    private static String stringReverse(char[] toCharArray, int start, int end, int mid) {
         //base condition
         if (mid >= toCharArray.length / 2) {
-            return toCharArray;
+            return new String(toCharArray);
         }
         // processing
         char temp = toCharArray[start];
@@ -25,7 +25,6 @@ public class StringReverse {
         toCharArray[end] = temp;
 
         // recursive relation
-        char reversed[] =  stringReverse(toCharArray, ++start, --end, ++mid);
-        return reversed;
+        return stringReverse(toCharArray, ++start, --end, ++mid);
     }
 }

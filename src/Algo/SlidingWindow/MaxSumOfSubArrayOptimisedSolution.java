@@ -2,7 +2,7 @@ package Algo.SlidingWindow;
 
 public class MaxSumOfSubArrayOptimisedSolution {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, -5, 6,3};
+        int[] arr = {1, 2, 3, 4, 5};
         int i = 0, j = 0, sum = 0, k = 3, maxSum = 0;
         while (j < arr.length) {
             sum = sum + arr[j];

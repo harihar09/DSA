@@ -12,6 +12,7 @@ public class QueueImpl2 {
         this.front = 0;
         this.rear = 0;
     }
+
     // implement push operation here
     // this will insert the data into queue if it's not full
     public void push(int data) {
@@ -22,6 +23,7 @@ public class QueueImpl2 {
             rear++;
         }
     }
+
     // this will pop the element from queue
     public void pop() {
         if (isEmpty()) {
@@ -30,7 +32,11 @@ public class QueueImpl2 {
             queue[front] = -1;
             front++;
         }
+        if (front == rear) {
+            front = rear = 0;
+        }
     }
+
     // this will print the front element from queue
     public void front() {
         if (isEmpty()) {
@@ -40,10 +46,12 @@ public class QueueImpl2 {
         }
 
     }
+
     // this will print the size of queue on console
     public void size() {
         System.out.println("queue size " + (rear - front));
     }
+
     // this will print the data to console
     public void print() {
         if (isEmpty()) {
@@ -55,10 +63,12 @@ public class QueueImpl2 {
             System.out.println();
         }
     }
+
     // this will return true if the queue is empty else false
     private boolean isEmpty() {
         return front == rear;
     }
+
     // this will return true if the queue is full else false
     private boolean isFull() {
         return rear == size;

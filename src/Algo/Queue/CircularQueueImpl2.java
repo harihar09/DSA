@@ -42,14 +42,13 @@ public class CircularQueueImpl2 {
         if (isEmpty()) {
             System.out.println("queue is empty,nothing to pop");
         } else if (front == rear) {
-            queue[front] = -1;
+           // queue[front++] = -1; this is meaningless for single element.
             front = rear = -1;
         } else if (front == size - 1) {
-            queue[front] = -1;
+            queue[front] = -1; // doesn't impact, but it's recommended to mark deleted element as -1
             front = 0;
         } else {
-            queue[front] = -1;
-            front++;
+            queue[front++] = -1;
         }
     }
 

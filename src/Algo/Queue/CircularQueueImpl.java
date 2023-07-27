@@ -1,5 +1,7 @@
 package Algo.Queue;
 
+import java.util.Queue;
+
 public class CircularQueueImpl {
     private int capacity;
     private int front;

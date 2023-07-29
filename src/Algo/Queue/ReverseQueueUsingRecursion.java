@@ -15,8 +15,11 @@ public class ReverseQueueUsingRecursion {
         System.out.println(queue);
     }
 
+    // you do the one step and let recursion handle the remaining part
+    // and add the element at last
+    // e.g. 1,2,3,4,5 -> 1 --- 5,4,3,2 and add 1 at last -> 5,4,3,2,1
     private static void reverse(Queue<Integer> queue) {
-        if(queue.isEmpty())
+        if (queue.isEmpty())
             return;
         int temp = queue.poll();
         reverse(queue);

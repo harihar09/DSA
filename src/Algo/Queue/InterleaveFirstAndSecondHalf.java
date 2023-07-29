@@ -27,6 +27,8 @@ public class InterleaveFirstAndSecondHalf {
             queue.add(firstHalf.poll());
             queue.add(queue.poll());
         }
+        //if the queue size is of add length then add first element
+        // to queue again
         if(len%2!=0){
             queue.add(queue.poll());
         }

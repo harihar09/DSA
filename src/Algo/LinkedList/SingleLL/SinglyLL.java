@@ -1,15 +1,15 @@
 package Algo.LinkedList.SingleLL;
 
 public class SinglyLL {
-    SinglyNode head = null;
-    SinglyNode tail = null;
+    SingleListNode head = null;
+    SingleListNode tail = null;
 
     private void printLL() {
         if (head == null) {
             System.out.println("list is empty");
             return;
         }
-        SinglyNode temp = head;
+        SingleListNode temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
@@ -21,7 +21,7 @@ public class SinglyLL {
         // create a new node
         // point new node to head
         // repoint head
-        SinglyNode node = new SinglyNode(data);
+        SingleListNode node = new SingleListNode(data);
         // ll is empty
         if (head == null) {
             head = node;
@@ -34,7 +34,7 @@ public class SinglyLL {
 
     private void insertAtTail(int data) {
         // create a new node
-        SinglyNode node = new SinglyNode(data);
+        SingleListNode node = new SingleListNode(data);
         // if ll is empty
         if (head == null) {
             head = node;
@@ -47,7 +47,7 @@ public class SinglyLL {
     }
 
     private void insertAtPosition(int data, int position) {
-        SinglyNode node = new SinglyNode(data);
+        SingleListNode node = new SingleListNode(data);
         // LL is empty
         if (head == null) {
             head = node;
@@ -65,7 +65,7 @@ public class SinglyLL {
             return;
         }
         int index = 1;
-        SinglyNode temp = head;
+        SingleListNode temp = head;
         position = position - 1;
         while (index < position) {
             temp = temp.next;
@@ -77,7 +77,7 @@ public class SinglyLL {
 
     private int listLength() {
         int len = 0;
-        SinglyNode temp = head;
+        SingleListNode temp = head;
         while (temp != null) {
             temp = temp.next;
             len++;
@@ -91,7 +91,7 @@ public class SinglyLL {
             System.out.println("list is empty");
             return;
         }
-        SinglyNode temp = head;
+        SingleListNode temp = head;
         head = head.next;
         temp.next = null;
     }
@@ -103,11 +103,11 @@ public class SinglyLL {
             return;
         }
         // go till second last number
-        SinglyNode temp = head;
+        SingleListNode temp = head;
         while (temp.next != tail) {
             temp = temp.next;
         }
-        //update last number and delete last number
+        //update and delete last number
         tail = temp;
         temp.next = null;
     }
@@ -129,7 +129,7 @@ public class SinglyLL {
         }
         //normal flow
         // go till node one before position
-        SinglyNode prev = head;
+        SingleListNode prev = head;
         int index = 1;
         position = position - 1;
         while (index < position) {
@@ -137,7 +137,7 @@ public class SinglyLL {
             index++;
         }
         //repoint prev next
-        SinglyNode curr = prev.next;
+        SingleListNode curr = prev.next;
         prev.next = curr.next;
         curr.next = null;
     }

@@ -59,14 +59,14 @@ public class SinglyLL {
             insertAtHead(data);
             return;
         }
-        int len = getLength();
+        int len = listLength();
         if (position > len) {
             insertAtTail(data);
             return;
         }
         int index = 1;
         SinglyNode temp = head;
-        position = position-1;
+        position = position - 1;
         while (index < position) {
             temp = temp.next;
             index++;
@@ -75,7 +75,7 @@ public class SinglyLL {
         temp.next = node;
     }
 
-    private int getLength() {
+    private int listLength() {
         int len = 0;
         SinglyNode temp = head;
         while (temp != null) {
@@ -83,6 +83,63 @@ public class SinglyLL {
             len++;
         }
         return len;
+    }
+
+    private void deleteAtHead() {
+        // empty check
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+        SinglyNode temp = head;
+        head = head.next;
+        temp.next = null;
+    }
+
+    private void deleteAtTail() {
+        //empty check
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+        // go till second last number
+        SinglyNode temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        //update last number and delete last number
+        tail = temp;
+        temp.next = null;
+    }
+
+    private void deleteAtPosition(int position) {
+        // invalid position
+        if (position <= 0 || position > listLength()) {
+            System.out.println("invalid position");
+            return;
+        }
+        // corner cases : head and tail
+        if (position == 1) {
+            deleteAtHead();
+            return;
+        }
+        if (position == listLength()) {
+            deleteAtTail();
+            return;
+        }
+        //normal flow
+        // go till node one before position
+        SinglyNode prev = head;
+        int index = 1;
+        position = position - 1;
+        while (index < position) {
+            prev = prev.next;
+            index++;
+        }
+        //repoint prev next
+        SinglyNode curr = prev.next;
+        prev.next = curr.next;
+        curr.next = null;
     }
 
     public static void main(String[] args) {
@@ -97,7 +154,16 @@ public class SinglyLL {
         LL.insertAtHead(50);
         LL.insertAtPosition(100, 3);
         LL.printLL();
-
+        System.out.println();
+        LL.deleteAtHead();
+        LL.printLL();
+        System.out.println();
+        LL.deleteAtTail();
+        LL.deleteAtTail();
+        LL.printLL();
+        System.out.println("\nDelete at position");
+        LL.deleteAtPosition(3);
+        LL.printLL();
     }
 }
 

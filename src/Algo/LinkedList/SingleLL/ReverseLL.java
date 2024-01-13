@@ -1,8 +1,10 @@
 package Algo.LinkedList.SingleLL;
 
+import java.util.List;
+
 public class ReverseLL {
-    private SingleListNode head;
-    private SingleListNode tail;
+    private static  SingleListNode head;
+    private static  SingleListNode tail;
 
     // insert at tail
     private void insertAtTail(int data) {
@@ -20,8 +22,8 @@ public class ReverseLL {
         tail = node;
     }
 
-    // reverse list
-    private SingleListNode reverse() {
+    // reverse list using iterative
+    private SingleListNode reverseUsingIterative() {
         //empty check
         if (head == null) {
             System.out.println("list is empty..");
@@ -31,7 +33,7 @@ public class ReverseLL {
         if (head.next == null) {
             return head;
         }
-        // normal flow - find out pre and curr and update the pointers
+        // normal flow - find out pre, curr nodes and update the pointers
         SingleListNode preNode = head;
         SingleListNode currNode = head.next;
         while (currNode != null) {
@@ -43,13 +45,28 @@ public class ReverseLL {
             preNode = currNode;
             currNode = nextNode;
         }
+        //update the head
         head.next = null;
         head = preNode;
         return head;
     }
 
+    //reverse list using recursion
+    private SingleListNode reverseUsingRecursion(SingleListNode prevNode, SingleListNode currNode) {
+        // base case
+        if (currNode == null) {
+            return prevNode;
+        }
+        // next node
+        SingleListNode nextNode = currNode.next;
+        //reverse list
+        currNode.next = prevNode;
+        //recursive relation
+        return reverseUsingRecursion(currNode, nextNode);
+    }
+
     // print list data
-    private void print() {
+    private void print(SingleListNode head) {
         //empty check
         if (head == null) {
             System.out.println("list is empty..");
@@ -67,9 +84,20 @@ public class ReverseLL {
         list.insertAtTail(10);
         list.insertAtTail(20);
         list.insertAtTail(30);
-        list.print();
+        list.print(head);
         System.out.println();
-        list.reverse();
-        list.print();
+        list.reverseUsingIterative();
+        list.print(head);
+        SingleListNode prevNode = null;
+        SingleListNode currNode = head;
+        System.out.println();
+        SingleListNode head = list.reverseUsingRecursion(null,currNode);
+        list.print(head);
+        System.out.println();
+        SingleListNode head1 = list.reverseUsingRecursion(null,head);
+        list.print(head1);
+        System.out.println();
+        SingleListNode head2 = list.reverseUsingRecursion(null, head1);
+        list.print(head2);
     }
 }

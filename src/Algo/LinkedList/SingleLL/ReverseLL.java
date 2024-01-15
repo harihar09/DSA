@@ -3,8 +3,8 @@ package Algo.LinkedList.SingleLL;
 import java.util.List;
 
 public class ReverseLL {
-    private static  SingleListNode head;
-    private static  SingleListNode tail;
+    private static SingleListNode head;
+    private static SingleListNode tail;
 
     // insert at tail
     private void insertAtTail(int data) {
@@ -73,10 +73,11 @@ public class ReverseLL {
             return;
         }
         SingleListNode tempNode = head;
-        while (tempNode != null) {
-            System.out.print(tempNode.data + " ");
+        while (tempNode.next != null) {
+            System.out.print(tempNode.data + "->");
             tempNode = tempNode.next;
         }
+        System.out.print(tempNode.data);
     }
 
     public static void main(String[] args) {
@@ -91,10 +92,10 @@ public class ReverseLL {
         SingleListNode prevNode = null;
         SingleListNode currNode = head;
         System.out.println();
-        SingleListNode head = list.reverseUsingRecursion(null,currNode);
+        SingleListNode head = list.reverseUsingRecursion(null, currNode);
         list.print(head);
         System.out.println();
-        SingleListNode head1 = list.reverseUsingRecursion(null,head);
+        SingleListNode head1 = list.reverseUsingRecursion(null, head);
         list.print(head1);
         System.out.println();
         SingleListNode head2 = list.reverseUsingRecursion(null, head1);

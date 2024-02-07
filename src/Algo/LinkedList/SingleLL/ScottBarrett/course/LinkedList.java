@@ -72,4 +72,24 @@ public class LinkedList {
         }
         System.out.println("Length : " + length);
     }
+
+    //prepend - add node to the beginning of the list
+    public void prepend(int data) {
+        //create new node
+        Node node = new Node(data);
+        //corner case - empty list
+        if (head == null) {
+            //point head and tail to new node
+            //and reset the length to one
+            head = node;
+            tail = node;
+            length = 1;
+            return;
+        }
+        //normal case - point new node to head
+        //and update the head and length
+        node.next = head;
+        head = node;
+        length++;
+    }
 }

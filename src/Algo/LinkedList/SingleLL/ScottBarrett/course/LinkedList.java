@@ -66,10 +66,6 @@ public class LinkedList {
     //print the length
     public void getLength() {
         //corner case - empty list
-        if (head == null) {
-            System.out.println("list is empty..");
-            return;
-        }
         System.out.println("Length : " + length);
     }
 
@@ -91,5 +87,71 @@ public class LinkedList {
         node.next = head;
         head = node;
         length++;
+    }
+
+    //append - add node to end of list
+    public void append(int data) {
+        //create new node
+        Node node = new Node(data);
+        //corner case - empty list
+        if (head == null || tail == null) {
+            //assign head and tail to the node
+            //reset the length to one
+            head = node;
+            tail = node;
+            length = 1;
+            return;
+        }
+        //normal case - add node at last and update the tail
+        //update the length
+        tail.next = node;
+        tail = tail.next;
+        length++;
+    }
+
+    //remove first
+    public void removeFirst() {
+        //corner case - empty list
+        //length = 0, head || tail == null
+        if (head == null || tail == null) {
+            //print and return
+            System.out.println("list is empty,nothing to remove");
+            return;
+        }
+        //normal case - update the head
+        Node tempNode = head;
+        head = head.next;
+        tempNode.next = null;
+        length--;
+    }
+
+    //remove last
+    public void removeLast() {
+        //corner case - empty list
+        if (length == 0) {
+            System.out.println("list is empty,nothing to remove");
+            return;
+        }
+        //single node - update head and tail
+        //and reset the length to zero
+        if (head.next == null) {
+            head = null;
+            tail = null;
+            length = 0;
+            return;
+        }
+        //more than one node
+        //find out second last node
+        Node secondLastNode = head;
+        Node last = head.next;
+        while (last.next != null) {
+            //update the last and secondLastNode
+            secondLastNode = last;
+            last = last.next;
+        }
+        //remove the last node and update the tail,length
+        secondLastNode.next = null;
+        tail = secondLastNode;
+        length--;
     }
 }

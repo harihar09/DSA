@@ -12,7 +12,25 @@ public class Main {
         //test prepend function
         list.prepend(5);
         list.print();
+        list.getLength();
         list.prepend(2);
         list.print();
+        list.getLength();
+        list.append(20);
+        list.append(25);
+        list.print();
+        list.getLength();
+        list.removeFirst();
+        list.removeFirst();
+        list.print();
+        list.getLength();
+        list.removeLast();
+        list.removeLast();
+        list.print();
+        list.getLength();
+        list.removeLast();
+        list.print();
+        list.getLength();
+
     }
 }

@@ -40,7 +40,6 @@ public class LinkedList {
             System.out.print(tempNode.data + " ");
             tempNode = tempNode.next;
         }
-        System.out.println();
     }
 
     //print the head

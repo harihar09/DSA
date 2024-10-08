@@ -21,7 +21,7 @@ public class SingleLLMain {
         System.out.println("null");
     }
 
-    // add data in the beginning
+    // add data at the beginning
     public void addAtHead(int data) {
         // check edge/corner case : empty list
         // for empty or non-empty, we need to create new node
@@ -47,7 +47,7 @@ public class SingleLLMain {
             return;
         }
         //non-empty list
-        // move tail to last node
+        // move tail to last node and update tail
         Node newNode = new Node(data);
         tail.next = newNode;
         tail = tail.next;

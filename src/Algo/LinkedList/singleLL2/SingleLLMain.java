@@ -53,11 +53,48 @@ public class SingleLLMain {
         tail = tail.next;
     }
 
-    public boolean isEmptyList() {
+    public void deleteHead() {
+        // edge case - empty list
+        if (isEmptyList()) {
+            System.out.println("List is empty");
+            return;
+        }
+        //non-empty list
+        Node tempNode = head;
+        head = head.next;
+        tempNode.next = null;
+    }
+
+    public void deleteTail() {
+        // edge case - empty list
+        if (isEmptyList()) {
+            System.out.println("list is empty");
+            return;
+        }
+        // non-empty list - single node
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        // non-empty list - more than one node
+        Node lastNode = head.next;
+        Node secondLastNode = head;
+        while (lastNode.next != null) {
+            // update lastNode and secondLastNode
+            lastNode = lastNode.next;
+            secondLastNode = secondLastNode.next;
+        }
+        // shift tail to secondLastNode
+        tail = secondLastNode;
+        tail.next = null;
+
+    }
+
+    private boolean isEmptyList() {
         return head == null;
     }
 
-    public void createNode(int data) {
+    private void createNode(int data) {
         Node newNode = new Node(data);
         head = newNode;
         tail = newNode;
@@ -77,6 +114,11 @@ public class SingleLLMain {
         singleLL.addAtTail(3);
         singleLL.printLL();
         singleLL.addAtHead(4);
+        singleLL.printLL();
+        singleLL.deleteHead();
+        singleLL.printLL();
+        singleLL.deleteTail();
+        singleLL.deleteTail();
         singleLL.printLL();
 
     }

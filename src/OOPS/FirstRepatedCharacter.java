@@ -13,14 +13,13 @@ public class FirstRepatedCharacter {
         boolean flag = false;
         int index = 0;
         char[] arr = str.toCharArray();
-        for (int i = 0; i < arr.length; i++) {
+        for (char c : arr) {
 
-            if(set.contains(arr[i])) {
-                System.out.println(arr[i]);
+            if (set.contains(c)) {
+                System.out.println(c);
                 break;
-            }
-            else
-                set.add(arr[i]);
+            } else
+                set.add(c);
         }
     }
 }
